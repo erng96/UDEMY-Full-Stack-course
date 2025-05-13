@@ -11,7 +11,13 @@
       <h1>Welcome to the Blog App</h1>
       <p>This is a simple blog application built with Node.js and Express.</p>
       <h2>Latest Posts</h2>
-      <ul></ul>
+      <ul>
+        <% posts.forEach(function(post) { %>
+        <li>
+          <a href="/posts/<%= post.id %>"><%= post.title %></a>
+        </li>
+        <% }) %>
+      </ul>
       <%-include('partials/footer') %>
     </main>
   </body>
